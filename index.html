@@ -16,498 +16,349 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
+            width: 100%;
             max-width: 1400px;
             margin: 0 auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
             color: white;
-            padding: 30px;
+            padding: 30px 20px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71, #e74c3c);
         }
 
         .header h1 {
-            font-size: 2.5em;
+            font-size: 32px;
             margin-bottom: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
         .header p {
+            font-size: 16px;
             opacity: 0.9;
-            font-size: 1.1em;
+            font-weight: 300;
         }
 
         .content {
             padding: 30px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-
-        @media (max-width: 1024px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
+            display: block;
+            min-height: 600px;
         }
 
         .main-content {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
+            width: 100%;
         }
 
         .input-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .input-section {
-                grid-template-columns: 1fr;
-            }
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
         .input-box {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
-            border: 2px solid #e9ecef;
+            background: linear-gradient(145deg, #ffffff, #f5f7fa);
+            border-radius: 12px;
+            padding: 25px;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+
+        .input-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
         }
 
         .input-box h3 {
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .input-box h3 i {
-            color: #667eea;
+        .input-box:nth-child(2) {
+            border-left-color: #2ecc71;
+        }
+
+        .input-box:nth-child(3) {
+            border-left-color: #e74c3c;
         }
 
         .format-info {
-            background: #e9ecef;
-            padding: 10px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 12px 15px;
+            border-radius: 8px;
             margin-bottom: 15px;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .format-info code {
-            background: #dee2e6;
-            padding: 2px 5px;
-            border-radius: 3px;
-            font-family: monospace;
+            font-size: 13px;
+            color: #555;
+            border-left: 3px solid #95a5a6;
         }
 
         textarea {
             width: 100%;
-            min-height: 200px;
+            min-height: 180px;
             padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-family: 'Monaco', 'Consolas', monospace;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Consolas', 'Fira Code', monospace;
             font-size: 14px;
             resize: vertical;
+            transition: all 0.3s ease;
+            background: #fdfdfd;
         }
 
         textarea:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
 
         .controls {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
             gap: 15px;
-        }
-
-        @media (max-width: 768px) {
-            .controls {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            flex-wrap: wrap;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 10px;
         }
 
         .btn {
-            padding: 12px;
+            padding: 14px 25px;
             border: none;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 180px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, #5a6fd8 0%, #6a409e 100%);
-        }
-
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #5a6268;
+            background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
         }
 
         .btn-success {
-            background: #28a745;
+            background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
             color: white;
         }
 
         .btn-success:hover {
-            background: #218838;
+            background: linear-gradient(135deg, #219653 0%, #145a32 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
         }
 
         .btn-danger {
-            background: #dc3545;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
         }
 
         .btn-danger:hover {
-            background: #c82333;
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
         }
 
         .results-section {
             margin-top: 20px;
+            animation: fadeIn 0.5s ease;
         }
 
         .results-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e1e8ed;
         }
 
         .results-header h3 {
-            color: #333;
+            color: #2c3e50;
+            font-size: 22px;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .results-table-container {
             overflow-x: auto;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            max-height: 400px;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            max-height: 500px;
             overflow-y: auto;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px;
+            min-width: 700px;
         }
 
         thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
             position: sticky;
             top: 0;
         }
 
         th {
-            padding: 12px 15px;
+            padding: 18px;
             text-align: left;
             font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         tbody tr {
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid #e1e8ed;
+            transition: all 0.2s ease;
         }
 
         tbody tr:hover {
-            background: #f8f9fa;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            transform: scale(1.002);
         }
 
         td {
-            padding: 10px 15px;
-            color: #333;
+            padding: 16px;
+            font-size: 14px;
         }
 
         .ip-cell {
-            font-family: monospace;
-            color: #667eea;
-            font-weight: 500;
-        }
-
-        .seeds-cell {
-            font-family: monospace;
-            color: #28a745;
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+            color: #3498db;
             font-weight: 600;
+            font-size: 13px;
         }
 
-        .seeds-cell.zero {
-            color: #dc3545;
+        .server-cell {
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+            background: #f1f8ff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #2c3e50;
+        }
+
+        .value-cell {
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+            font-weight: 700;
+            color: #27ae60;
+            font-size: 15px;
         }
 
         .person-cell {
             text-transform: capitalize;
+            font-weight: 600;
+            color: #2c3e50;
+            background: #fff8e1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
         }
 
         .status {
-            padding: 10px 15px;
-            border-radius: 6px;
+            padding: 18px 20px;
+            border-radius: 12px;
             margin: 15px 0;
-            font-weight: 500;
-        }
-
-        .status.success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .status.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
         }
 
         .status.info {
-            background: #cce5ff;
-            color: #004085;
-            border: 1px solid #b8daff;
+            background: linear-gradient(135deg, #d6eaf8 0%, #aed6f1 100%);
+            color: #21618c;
+            border-left: 5px solid #3498db;
         }
 
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .status.success {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a3e4d7 100%);
+            color: #145a32;
+            border-left: 5px solid #27ae60;
         }
 
-        .sidebar-card {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
-            border: 1px solid #e9ecef;
-        }
-
-        .sidebar-card h3 {
-            color: #333;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .sidebar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .sidebar-header h3 {
-            margin: 0;
-            border: none;
-            padding: 0;
-        }
-
-        .history-list {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .history-item {
-            background: white;
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            border: 1px solid #e9ecef;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .history-item:hover {
-            background: #e9ecef;
-            transform: translateX(5px);
-        }
-
-        .history-item.active {
-            background: #e3f2fd;
-            border-color: #667eea;
-            border-left: 4px solid #667eea;
-        }
-
-        .history-date {
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .history-stats {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .analytics-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .stat-box {
-            background: white;
-            padding: 12px;
-            border-radius: 6px;
-            text-align: center;
-            border: 1px solid #e9ecef;
-        }
-
-        .stat-value {
-            font-size: 20px;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: #666;
-        }
-
-        .analytics-section {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #e9ecef;
-        }
-
-        .performance-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            background: white;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            border: 1px solid #e9ecef;
-        }
-
-        .performance-name {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .performance-seeds {
-            font-family: monospace;
-            font-weight: 600;
-            color: #28a745;
-        }
-
-        .performance-avg {
-            font-family: monospace;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .performance-rank {
-            width: 24px;
-            height: 24px;
-            background: #667eea;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .performance-rank.gold {
-            background: #ffd700;
-        }
-
-        .performance-rank.silver {
-            background: #c0c0c0;
-        }
-
-        .performance-rank.bronze {
-            background: #cd7f32;
-        }
-
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #e9ecef;
-            margin-bottom: 15px;
-        }
-
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            border: none;
-            background: none;
-            font-weight: 600;
-            color: #666;
-            border-bottom: 3px solid transparent;
-        }
-
-        .tab:hover {
-            color: #667eea;
-        }
-
-        .tab.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
+        .status.error {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            color: #78281f;
+            border-left: 5px solid #e74c3c;
         }
 
         .loader {
             display: none;
             text-align: center;
-            padding: 20px;
-        }
-
-        .loader.active {
-            display: block;
+            padding: 40px;
+            background: linear-gradient(145deg, #ffffff, #f5f7fa);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
         .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-right: 4px solid #2ecc71;
+            border-bottom: 4px solid #e74c3c;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
+            width: 50px;
+            height: 50px;
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+            margin: 0 auto 20px;
         }
 
         @keyframes spin {
@@ -515,65 +366,81 @@
             100% { transform: rotate(360deg); }
         }
 
-        .lifetime-stats {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #e9ecef;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .lifetime-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px;
-            margin-bottom: 6px;
-            background: white;
-            border-radius: 4px;
-            border: 1px solid #e9ecef;
+        .header h1 i {
+            color: #3498db;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
-        .lifetime-name {
-            font-weight: 500;
-            color: #333;
+        .format-info i {
+            color: #3498db;
         }
 
-        .lifetime-avg {
-            font-family: monospace;
-            font-weight: 600;
-            color: #7209b7;
+        .results-header .btn {
+            min-width: auto;
+            padding: 12px 20px;
         }
 
-        .clear-history-btn {
-            background: #dc3545;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: background 0.3s;
+        .results-header .btn-success {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
         }
 
-        .clear-history-btn:hover {
-            background: #c82333;
+        .results-header .btn-success:hover {
+            background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
         }
 
-        .history-empty {
-            text-align: center;
-            color: #666;
-            padding: 20px;
-            font-style: italic;
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
         }
 
-        .sidebar-footer {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #e9ecef;
-            text-align: center;
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #2980b9, #27ae60);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+                gap: 20px;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .header h1 {
+                font-size: 26px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header {
+                padding: 25px 15px;
+            }
+            
+            .input-box {
+                padding: 20px;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -581,54 +448,64 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-robot"></i> Data Auto-Detector Tool</h1>
-            <p>Automatically detects and combines server/IP/person data with seeds information</p>
+            <h1><i class="fas fa-database"></i> Data Auto-Detector Tool</h1>
+            <p>Extract and combine data from multiple sources</p>
         </div>
 
         <div class="content">
             <div class="main-content">
                 <div class="input-section">
                     <div class="input-box">
-                        <h3><i class="fas fa-server"></i> Input 1: Server & Person Data</h3>
+                        <h3><i class="fas fa-users"></i> Input 1: Server & Person Data</h3>
                         <div class="format-info">
-                            Format: <code>server_name IP_address person_name</code><br>
-                            Example: <code>s_cmh6_5820 51.91.176.204 Imnae</code>
+                            <i class="fas fa-info-circle"></i> Format: server_name IP_address person_name
                         </div>
-                        <textarea id="input1" placeholder="Paste your server data here...
-Example:
-s_cmh6_5820  51.91.176.204  Imane
-s_cmh6_5820  51.91.176.203  Amine
-s_cmh6_5820  51.91.176.65  Nabil"></textarea>
+                        <textarea id="input1" placeholder="s_cmh6_5722  209.58.134.24  John
+s_cmh6_5322  69.65.51.180  Sarah"></textarea>
                     </div>
 
                     <div class="input-box">
-                        <h3><i class="fas fa-table"></i> Input 2: Seeds Data</h3>
+                        <h3><i class="fas fa-list"></i> Input 2: Max sent for IP</h3>
                         <div class="format-info">
-                            Format: Tabular data with IP and Seeds columns<br>
-                            Auto-detects IPs and seeds numbers from any format<br>
-                            <span style="color: #e74c3c;">Note: Sums all seeds for duplicate IPs</span>
+                            <i class="fas fa-info-circle"></i> Custom data format
                         </div>
-                        <textarea id="input2" placeholder="Paste your seeds data here...
-Example:
-Group  Entity  Server  Ip  Team  Seeds Sent
-CMH    CMH6    s_cmh6_5899  51.254.84.4  Team  9555
-CMH    CMH6    s_cmh6_5820  51.91.176.204  Team  2681342"></textarea>
+                        <textarea id="input2" placeholder="s_cmh6_5722  209.58.134.24
+Gmail
+11132
+13503
+12208
+-
+26998
+13501
+19864
+20132
+26998
+705604"></textarea>
+                    </div>
+
+                    <div class="input-box">
+                        <h3><i class="fas fa-table"></i> Input 3: LifeTime Seeds</h3>
+                        <div class="format-info">
+                            <i class="fas fa-info-circle"></i> Tabular data format
+                        </div>
+                        <textarea id="input3" placeholder="Group  Entity  Server  Ip  Seeds
+CMH    CMH6    s_cmh6_5899  51.254.84.4  9555
+CMH    CMH6    s_cmh6_5820  51.91.176.204  2681342"></textarea>
                     </div>
                 </div>
 
                 <div class="status info" id="detectionStatus">
-                    Ready to process data. Paste your data and click "Process Data".
+                    <i class="fas fa-info-circle"></i> Paste your data in the inputs above
                 </div>
 
                 <div class="controls">
-                    <button class="btn btn-primary" onclick="processData()">
-                        <i class="fas fa-cogs"></i> Process Data
+                    <button class="btn btn-primary" onclick="processCustomData()">
+                        <i class="fas fa-cogs"></i> Process Max sent for IP
                     </button>
-                    <button class="btn btn-secondary" onclick="loadExample()">
-                        <i class="fas fa-eye"></i> Load Example
-                    </button>               
-                
-                    <button class="btn btn-secondary" onclick="clearAll()">
+                    <button class="btn btn-success" onclick="processStandardData()">
+                        <i class="fas fa-cogs"></i> Process LifeTime seeds 
+                    </button>
+                    <button class="btn btn-danger" onclick="clearAll()">
                         <i class="fas fa-trash"></i> Clear All
                     </button>
                 </div>
@@ -639,106 +516,27 @@ CMH    CMH6    s_cmh6_5820  51.91.176.204  Team  2681342"></textarea>
                 </div>
 
                 <div class="results-section" id="resultsSection" style="display: none;">
-                    <div class="tabs">
-                        <button class="tab active" data-tab="results">
-                            <i class="fas fa-table"></i> Results
-                        </button>
-                        
-                    </div>
-
-                    <div id="resultsTab" class="tab-content active">
-                        <div class="results-header">
-                            <h3><i class="fas fa-list"></i> Combined Results</h3>
-                            <button class="btn-success" onclick="downloadResults()">
-                                <i class="fas fa-download"></i> Download
-                            </button>
-                        </div>
-
-                        <div class="results-table-container">
-                            <table id="resultsTable">
-                                <thead>
-                                    <tr>
-                                        <th>IP Address</th>
-                                        <th>Server</th>
-                                        <th>Seeds Sent</th>
-                                        <th>Person</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="resultsBody">
-                                    <!-- Results will be inserted here -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div id="analyticsTab" class="tab-content">
-                        <div class="results-header">
-                            <h3><i class="fas fa-chart-pie"></i> Current Search Analytics</h3>
-                        </div>
-
-                        <div class="analytics-stats" id="analyticsStats">
-                            <!-- Stats will be inserted here -->
-                        </div>
-
-                        <div class="analytics-section">
-                            <h4><i class="fas fa-trophy"></i> Top Performers (This Search)</h4>
-                            <div id="topPerformers">
-                                <!-- Top performers will be inserted here -->
-                            </div>
-                        </div>
-
-                        <div class="analytics-section">
-                            <h4><i class="fas fa-chart-line"></i> Performance Summary</h4>
-                            <div id="performanceSummary">
-                                <!-- Performance summary will be inserted here -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="lifetimeTab" class="tab-content">
-                        <div class="results-header">
-                            <h3><i class="fas fa-history"></i> Lifetime Statistics</h3>
-                        </div>
-
-                        <div class="analytics-stats" id="lifetimeStats">
-                            <!-- Lifetime stats will be inserted here -->
-                        </div>
-
-                        <div class="lifetime-stats">
-                            <h4><i class="fas fa-user-friends"></i> Average Seeds Per Person (All Time)</h4>
-                            <div id="lifetimeAverages">
-                                <!-- Lifetime averages will be inserted here -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar">
-                <div class="sidebar-card">
-                    <div class="sidebar-header">
-                        <h3><i class="fas fa-history"></i> Search History</h3>
-                        <button class="clear-history-btn" onclick="clearHistory()" title="Clear All History">
-                            <i class="fas fa-trash"></i>
+                    <div class="results-header">
+                        <h3><i class="fas fa-table"></i> Results</h3>
+                        <button class="btn btn-success" onclick="downloadResults()">
+                            <i class="fas fa-download"></i> Download
                         </button>
                     </div>
-                    <div class="history-list" id="historyList">
-                        <!-- History items will be inserted here -->
-                    </div>
-                    <div id="emptyHistory" class="history-empty">
-                        <i class="fas fa-clock fa-2x"></i><br>
-                        No search history yet
-                    </div>
-                    <div class="sidebar-footer">
-                        <small>Click any history item to load it</small>
-                    </div>
-                </div>
 
-                <div class="sidebar-card">
-                    <h3><i class="fas fa-chart-line"></i> Quick Stats</h3>
-                    <div id="quickStats" class="history-empty">
-                        <i class="fas fa-chart-bar fa-2x"></i><br>
-                        Process data to see stats
+                    <div class="results-table-container">
+                        <table id="resultsTable">
+                            <thead>
+                                <tr>
+                                    <th>IP Address</th>
+                                    <th>Server</th>
+                                    <th>Value</th>
+                                    <th>Person</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsBody">
+                                <!-- Results will be inserted here -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -750,24 +548,22 @@ CMH    CMH6    s_cmh6_5820  51.91.176.204  Team  2681342"></textarea>
         const IP_REGEX = /\b(?:\d{1,3}\.){3}\d{1,3}\b/g;
         const SERVER_REGEX = /[sS]_[a-zA-Z0-9_]+/g;
 
-        class DataAutoDetector {
+        class DataProcessor {
             constructor() {
                 this.results = [];
                 this.stats = {
-                    input1: { ips: 0, people: 0, servers: 0 },
-                    input2: { ips: 0, seeds: 0, totalSeeds: 0 }
+                    totalRecords: 0,
+                    totalValue: 0,
+                    matched: 0
                 };
             }
 
-            // Parse Input 1 - server IP person format
-            parseInput1(text) {
+            // Parse server-person mapping from Input 1
+            parseServerPersonMapping(text) {
                 const lines = text.trim().split('\n').filter(line => line.trim());
-                const data = [];
+                const mapping = new Map(); // Key: "server_ip", Value: person
                 
-                this.stats.input1 = { ips: 0, people: 0, servers: 0 };
-
                 for (const line of lines) {
-                    // Split by multiple spaces or tabs
                     const parts = line.trim().split(/\s+/);
                     if (parts.length < 3) continue;
                     
@@ -780,798 +576,161 @@ CMH    CMH6    s_cmh6_5820  51.91.176.204  Team  2681342"></textarea>
                             ip = part;
                         } else if (SERVER_REGEX.test(part)) {
                             server = part;
-                        } else if (part && !part.match(/^\d/) && part.length > 2) {
-                            // This should be the person name
-                            person = part.toLowerCase().replace(/[^a-z]/g, '');
+                        } else if (part && !part.match(/^\d/) && part.length > 1) {
+                            person = part;
                         }
                     }
                     
                     if (ip && server && person) {
-                        data.push({ server, ip, person });
-                        this.stats.input1.ips++;
-                        this.stats.input1.servers++;
-                        this.stats.input1.people++;
+                        const key = `${server}_${ip}`;
+                        mapping.set(key, person);
                     }
                 }
 
-                return data;
+                return mapping;
             }
 
-            // Parse Input 2 - seeds data with IP
-            parseInput2(text) {
-                const lines = text.trim().split('\n').filter(line => line.trim());
-                const ipSeedsMap = new Map();
+            // Process Custom Data (Input 2)
+            processCustomData(serverPersonText, customDataText) {
+                const mapping = this.parseServerPersonMapping(serverPersonText);
+                const lines = customDataText.trim().split('\n').filter(line => line.trim());
+                const results = [];
                 
-                this.stats.input2 = { ips: 0, seeds: 0, totalSeeds: 0 };
-
-                // Check if first line has headers
-                const firstLine = lines[0].toLowerCase();
-                const hasHeader = firstLine.includes('ip') || firstLine.includes('seed');
+                this.stats = { totalRecords: 0, totalValue: 0, matched: 0 };
                 
-                let seedsIndex = 7; // Default position for seeds in tab-separated data
+                let currentServer = '';
+                let currentIP = '';
+                let values = [];
+                let inBlock = false;
 
-                if (hasHeader) {
-                    // Try to split by tab or multiple spaces
-                    const headers = lines[0].split(/\t/).map(h => h.trim().toLowerCase());
-                    seedsIndex = headers.findIndex(h => h.includes('seed'));
-                    if (seedsIndex === -1) seedsIndex = 7; // Fallback to default
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    const serverMatch = line.match(SERVER_REGEX);
+                    const ipMatch = line.match(IP_REGEX);
+                    
+                    if (serverMatch && ipMatch) {
+                        if (inBlock && currentServer && currentIP && values.length > 0) {
+                            this.processCustomBlock(currentServer, currentIP, values, mapping, results);
+                        }
+                        
+                        currentServer = serverMatch[0];
+                        currentIP = ipMatch[0];
+                        values = [];
+                        inBlock = true;
+                    } else if (inBlock) {
+                        const num = parseInt(line.replace(/,/g, ''));
+                        if (!isNaN(num)) {
+                            values.push(num);
+                        }
+                    }
                 }
+                
+                if (inBlock && currentServer && currentIP && values.length > 0) {
+                    this.processCustomBlock(currentServer, currentIP, values, mapping, results);
+                }
+                
+                // Sort results from highest to lowest value
+                results.sort((a, b) => b.value - a.value);
+                
+                this.results = results;
+                return this.results;
+            }
 
+            processCustomBlock(server, ip, values, mapping, results) {
+                const value = values.length >= 2 ? values[values.length - 2] : 0;
+                const key = `${server}_${ip}`;
+                const person = mapping.get(key) || 'Unknown';
+                
+                results.push({
+                    server: server,
+                    ip: ip,
+                    value: value,
+                    person: person,
+                    matched: person !== 'Unknown'
+                });
+                
+                this.stats.totalRecords++;
+                this.stats.totalValue += value;
+                if (person !== 'Unknown') this.stats.matched++;
+            }
+
+            // Process Standard Data (Input 3)
+            processStandardData(serverPersonText, seedsDataText) {
+                const mapping = this.parseServerPersonMapping(serverPersonText);
+                const lines = seedsDataText.trim().split('\n').filter(line => line.trim());
+                const results = [];
+                
+                this.stats = { totalRecords: 0, totalValue: 0, matched: 0 };
+                
+                const hasHeader = lines[0].toLowerCase().includes('ip') || lines[0].toLowerCase().includes('seed');
                 const startLine = hasHeader ? 1 : 0;
 
                 for (let i = startLine; i < lines.length; i++) {
                     const line = lines[i];
-                    
-                    // Find IP address
                     const ipMatch = line.match(IP_REGEX);
                     if (!ipMatch) continue;
                     
                     const ip = ipMatch[0];
-                    this.stats.input2.ips++;
-
-                    // Find seeds number - try different methods
+                    let server = '';
                     let seeds = 0;
                     
-                    // Method 1: Try to split by tabs (most accurate for your format)
+                    // Find server
+                    const serverMatch = line.match(SERVER_REGEX);
+                    if (serverMatch) {
+                        server = serverMatch[0];
+                    }
+                    
+                    // Find seeds
                     const tabParts = line.split('\t');
-                    if (tabParts.length > seedsIndex && tabParts[seedsIndex]) {
-                        seeds = parseInt(tabParts[seedsIndex].replace(/,/g, '')) || 0;
+                    if (tabParts.length > 7) {
+                        seeds = parseInt(tabParts[7].replace(/,/g, '')) || 0;
                     } else {
-                        // Method 2: Find numbers in the line
                         const numbers = line.match(/\d+/g) || [];
-                        // Look for large numbers (likely seeds)
-                        const largeNumbers = numbers
-                            .map(n => parseInt(n))
-                            .filter(n => n > 1000); // Seeds are usually large numbers
-                        
+                        const largeNumbers = numbers.map(n => parseInt(n)).filter(n => n > 1000);
                         if (largeNumbers.length > 0) {
                             seeds = Math.max(...largeNumbers);
                         }
                     }
                     
-                    // Accumulate seeds for this IP (handle duplicates)
-                    const currentSeeds = ipSeedsMap.get(ip) || 0;
-                    ipSeedsMap.set(ip, currentSeeds + seeds);
-                    
-                    if (seeds > 0) {
-                        this.stats.input2.seeds++;
-                        this.stats.input2.totalSeeds += seeds;
+                    if (server && ip) {
+                        const key = `${server}_${ip}`;
+                        const person = mapping.get(key) || 'Unknown';
+                        
+                        results.push({
+                            server: server,
+                            ip: ip,
+                            value: seeds,
+                            person: person,
+                            matched: person !== 'Unknown'
+                        });
+                        
+                        this.stats.totalRecords++;
+                        this.stats.totalValue += seeds;
+                        if (person !== 'Unknown') this.stats.matched++;
                     }
                 }
-
-                // Convert map to array
-                return Array.from(ipSeedsMap.entries()).map(([ip, seeds]) => ({ ip, seeds }));
-            }
-
-            // Combine data from both inputs
-            combineData(input1Data, input2Data) {
-                // Create a map of IP to seeds from input2
-                const seedsMap = new Map();
-                input2Data.forEach(item => {
-                    seedsMap.set(item.ip, item.seeds);
-                });
-
-                // Combine with input1 data
-                const results = input1Data.map(item => {
-                    const seeds = seedsMap.get(item.ip) || 0;
-                    return {
-                        ip: item.ip,
-                        server: item.server,
-                        seeds: seeds.toLocaleString(),
-                        person: item.person,
-                        rawSeeds: seeds
-                    };
-                });
-
-                return results;
-            }
-
-            // Process both inputs
-            process(input1Text, input2Text) {
-                const input1Data = this.parseInput1(input1Text);
-                const input2Data = this.parseInput2(input2Text);
                 
-                this.results = this.combineData(input1Data, input2Data);
+                // Sort results from highest to lowest value
+                results.sort((a, b) => b.value - a.value);
                 
-                return {
-                    results: this.results,
-                    stats: this.stats
-                };
+                this.results = results;
+                return this.results;
             }
 
-            // Get analytics for current search
-            getAnalytics() {
-                if (!this.results || this.results.length === 0) {
-                    return null;
-                }
-
-                // Calculate totals
-                const totalSeeds = this.results.reduce((sum, item) => sum + item.rawSeeds, 0);
-                const avgSeeds = Math.round(totalSeeds / this.results.length);
-                const nonZeroSeeds = this.results.filter(r => r.rawSeeds > 0).length;
-                const successRate = Math.round((nonZeroSeeds / this.results.length) * 100);
-
-                // Group by person for this search
-                const personStats = {};
-                this.results.forEach(item => {
-                    if (!personStats[item.person]) {
-                        personStats[item.person] = {
-                            totalSeeds: 0,
-                            count: 0
-                        };
-                    }
-                    personStats[item.person].totalSeeds += item.rawSeeds;
-                    personStats[item.person].count++;
-                });
-
-                // Sort persons by total seeds (descending)
-                const sortedPersons = Object.entries(personStats)
-                    .sort(([, a], [, b]) => b.totalSeeds - a.totalSeeds)
-                    .map(([person, stats], index) => ({
-                        person,
-                        totalSeeds: stats.totalSeeds,
-                        avgSeeds: Math.round(stats.totalSeeds / stats.count),
-                        rank: index + 1
-                    }));
-
-                // Find highest and lowest
-                const highest = sortedPersons[0] || null;
-                const lowest = sortedPersons[sortedPersons.length - 1] || null;
-
-                return {
-                    totalRecords: this.results.length,
-                    totalSeeds,
-                    avgSeeds,
-                    successRate,
-                    topPerformers: sortedPersons.slice(0, 5), // Top 5
-                    highestPerformer: highest,
-                    lowestPerformer: lowest,
-                    personStats
-                };
-            }
-
-            // Generate TSV for download
+            // Generate TSV for download (already sorted)
             generateTSV() {
-                const headers = ['IP', 'Server', 'Seeds Sent', 'Person'];
-                const rows = this.results.map(r => [r.ip, r.server, r.seeds, r.person]);
+                const headers = ['IP', 'Server', 'Value', 'Person'];
+                const rows = this.results.map(r => [r.ip, r.server, r.value, r.person]);
                 return [headers.join('\t'), ...rows.map(row => row.join('\t'))].join('\n');
             }
         }
 
-        // History Manager
-        class HistoryManager {
-            constructor() {
-                this.history = JSON.parse(localStorage.getItem('dataHistory')) || [];
-                this.maxHistory = 20;
-                this.currentHistoryId = null;
-            }
-
-            addEntry(input1, input2, results, stats) {
-                // Calculate person stats for this search
-                const personStats = {};
-                results.forEach(item => {
-                    if (!personStats[item.person]) {
-                        personStats[item.person] = {
-                            totalSeeds: 0,
-                            count: 0,
-                            searches: 1
-                        };
-                    }
-                    personStats[item.person].totalSeeds += item.rawSeeds;
-                    personStats[item.person].count++;
-                });
-
-                // Calculate averages for this search
-                Object.keys(personStats).forEach(person => {
-                    personStats[person].avgSeeds = Math.round(personStats[person].totalSeeds / personStats[person].count);
-                });
-
-                const entry = {
-                    id: Date.now(),
-                    timestamp: new Date().toLocaleString(),
-                    results: JSON.parse(JSON.stringify(results)), // Deep copy
-                    resultsCount: results.length,
-                    totalSeeds: results.reduce((sum, r) => sum + r.rawSeeds, 0),
-                    stats: stats,
-                    personStats: personStats,
-                    input1Preview: input1.substring(0, 100) + (input1.length > 100 ? '...' : ''),
-                    input2Preview: input2.substring(0, 100) + (input2.length > 100 ? '...' : '')
-                };
-
-                this.history.unshift(entry);
-                if (this.history.length > this.maxHistory) {
-                    this.history.pop();
-                }
-
-                this.save();
-                this.currentHistoryId = entry.id;
-                return entry;
-            }
-
-            getEntry(id) {
-                return this.history.find(entry => entry.id === id);
-            }
-
-            getCurrentEntry() {
-                return this.history.find(entry => entry.id === this.currentHistoryId);
-            }
-
-            getLifetimeStats() {
-                if (this.history.length === 0) return null;
-
-                // Aggregate all person stats from all searches
-                const lifetimeStats = {};
-                let totalSearches = 0;
-                let totalRecords = 0;
-                let totalSeeds = 0;
-
-                this.history.forEach(entry => {
-                    totalSearches++;
-                    totalRecords += entry.resultsCount;
-                    totalSeeds += entry.totalSeeds;
-
-                    // Merge person stats
-                    entry.results.forEach(item => {
-                        if (!lifetimeStats[item.person]) {
-                            lifetimeStats[item.person] = {
-                                totalSeeds: 0,
-                                totalRecords: 0,
-                                searches: new Set()
-                            };
-                        }
-                        lifetimeStats[item.person].totalSeeds += item.rawSeeds;
-                        lifetimeStats[item.person].totalRecords++;
-                        lifetimeStats[item.person].searches.add(entry.id);
-                    });
-                });
-
-                // Calculate averages
-                Object.keys(lifetimeStats).forEach(person => {
-                    lifetimeStats[person].avgSeeds = Math.round(lifetimeStats[person].totalSeeds / lifetimeStats[person].totalRecords);
-                    lifetimeStats[person].searchCount = lifetimeStats[person].searches.size;
-                    delete lifetimeStats[person].searches; // Remove Set
-                });
-
-                // Sort by average seeds (descending)
-                const sortedPersons = Object.entries(lifetimeStats)
-                    .sort(([, a], [, b]) => b.avgSeeds - a.avgSeeds)
-                    .map(([person, stats], index) => ({
-                        person,
-                        avgSeeds: stats.avgSeeds,
-                        totalSeeds: stats.totalSeeds,
-                        recordCount: stats.totalRecords,
-                        searchCount: stats.searchCount,
-                        rank: index + 1
-                    }));
-
-                return {
-                    totalSearches,
-                    totalRecords,
-                    totalSeeds,
-                    avgSeedsPerSearch: Math.round(totalSeeds / totalSearches),
-                    avgRecordsPerSearch: Math.round(totalRecords / totalSearches),
-                    personAverages: sortedPersons
-                };
-            }
-
-            save() {
-                localStorage.setItem('dataHistory', JSON.stringify(this.history));
-            }
-
-            getHistory() {
-                return this.history;
-            }
-
-            clearHistory() {
-                this.history = [];
-                this.currentHistoryId = null;
-                this.save();
-                return true;
-            }
-        }
-
-        // DOM Elements and State
-        const detector = new DataAutoDetector();
-        const historyManager = new HistoryManager();
+        // Global variables
+        const processor = new DataProcessor();
         let currentResults = [];
-        
-        // Initialize
-        updateHistoryList();
-        setupTabHandlers();
-
-        // Setup tab click handlers
-        function setupTabHandlers() {
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.addEventListener('click', function() {
-                    switchTab(this.dataset.tab);
-                });
-            });
-        }
-
-        function switchTab(tabName) {
-            // Update tabs
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Activate selected tab
-            document.querySelector(`.tab[data-tab="${tabName}"]`).classList.add('active');
-            document.getElementById(tabName + 'Tab').classList.add('active');
-
-            // Update content for the tab
-            if (tabName === 'analytics') {
-                updateAnalytics();
-            } else if (tabName === 'lifetime') {
-                updateLifetimeStats();
-            }
-        }
 
         function showLoader(show) {
             document.getElementById('loader').style.display = show ? 'block' : 'none';
-        }
-
-        function processData() {
-            const input1 = document.getElementById('input1').value.trim();
-            const input2 = document.getElementById('input2').value.trim();
-
-            if (!input1 || !input2) {
-                showStatus('Please provide data in both fields', 'error');
-                return;
-            }
-
-            showLoader(true);
-            showResults(false);
-
-            setTimeout(() => {
-                try {
-                    // Process the data
-                    const result = detector.process(input1, input2);
-                    currentResults = result.results;
-                    
-                    // Display results immediately
-                    displayResults(currentResults);
-                    
-                    // Add to history
-                    historyManager.addEntry(input1, input2, result.results, result.stats);
-                    
-                    // Update UI
-                    updateHistoryList();
-                    updateQuickStats(result);
-                    
-                    showStatus(`Processed ${result.results.length} records successfully`, 'success');
-                    showResults(true);
-                    
-                    // Switch to results tab automatically
-                    switchTab('results');
-                    
-                } catch (error) {
-                    showStatus(`Error: ${error.message}`, 'error');
-                    console.error(error);
-                } finally {
-                    showLoader(false);
-                }
-            }, 500);
-        }
-
-        function displayResults(results) {
-            const tbody = document.getElementById('resultsBody');
-            tbody.innerHTML = '';
-
-            if (results.length === 0) {
-                tbody.innerHTML = `
-                    <tr>
-                        <td colspan="4" style="text-align: center; color: #666; padding: 40px;">
-                            <i class="fas fa-exclamation-triangle fa-2x"></i><br>
-                            No matching data found
-                        </td>
-                    </tr>
-                `;
-                return;
-            }
-
-            results.forEach(item => {
-                const row = document.createElement('tr');
-                const seedsClass = item.rawSeeds === 0 ? 'seeds-cell zero' : 'seeds-cell';
-                
-                row.innerHTML = `
-                    <td class="ip-cell">${item.ip}</td>
-                    <td>${item.server}</td>
-                    <td class="${seedsClass}">${item.seeds}</td>
-                    <td class="person-cell">${item.person}</td>
-                `;
-                tbody.appendChild(row);
-            });
-        }
-
-        function loadHistoryEntry(id) {
-            const entry = historyManager.getEntry(id);
-            if (!entry) return;
-
-            // Highlight selected history item
-            document.querySelectorAll('.history-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            event.currentTarget.classList.add('active');
-
-            // Display the historical data
-            displayResults(entry.results);
-            currentResults = entry.results;
-            
-            // Update analytics for this historical search
-            updateAnalyticsForHistory(entry);
-            
-            // Switch to results tab
-            switchTab('results');
-            
-            showStatus(`Loaded search from ${entry.timestamp}`, 'success');
-        }
-
-        function updateAnalytics() {
-            const analytics = detector.getAnalytics();
-            updateAnalyticsDisplay(analytics);
-        }
-
-        function updateAnalyticsForHistory(historyEntry) {
-            // Create a temporary detector to calculate analytics for this history entry
-            const tempDetector = new DataAutoDetector();
-            tempDetector.results = historyEntry.results;
-            
-            const analytics = tempDetector.getAnalytics();
-            updateAnalyticsDisplay(analytics);
-        }
-
-        function updateAnalyticsDisplay(analytics) {
-            const statsEl = document.getElementById('analyticsStats');
-            const performersEl = document.getElementById('topPerformers');
-            const summaryEl = document.getElementById('performanceSummary');
-
-            if (!analytics) {
-                statsEl.innerHTML = `
-                    <div class="stat-box">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Records</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Total Seeds</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Avg Seeds</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">0%</div>
-                        <div class="stat-label">Success Rate</div>
-                    </div>
-                `;
-                
-                performersEl.innerHTML = `
-                    <div style="text-align: center; color: #666; padding: 20px;">
-                        <i class="fas fa-chart-bar"></i><br>
-                        No data to analyze
-                    </div>
-                `;
-                
-                summaryEl.innerHTML = `
-                    <div style="text-align: center; color: #666; padding: 20px;">
-                        <i class="fas fa-info-circle"></i><br>
-                        No performance data available
-                    </div>
-                `;
-                return;
-            }
-
-            // Update stats
-            statsEl.innerHTML = `
-                <div class="stat-box">
-                    <div class="stat-value">${analytics.totalRecords}</div>
-                    <div class="stat-label">Records</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">${analytics.totalSeeds.toLocaleString()}</div>
-                    <div class="stat-label">Total Seeds</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">${analytics.avgSeeds.toLocaleString()}</div>
-                    <div class="stat-label">Avg Seeds</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">${analytics.successRate}%</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-            `;
-
-            // Update top performers
-            if (analytics.topPerformers.length === 0) {
-                performersEl.innerHTML = `
-                    <div style="text-align: center; color: #666; padding: 20px;">
-                        <i class="fas fa-users"></i><br>
-                        No performers found
-                    </div>
-                `;
-            } else {
-                let performersHTML = '';
-                analytics.topPerformers.forEach(performer => {
-                    let rankClass = '';
-                    if (performer.rank === 1) rankClass = 'gold';
-                    else if (performer.rank === 2) rankClass = 'silver';
-                    else if (performer.rank === 3) rankClass = 'bronze';
-                    
-                    performersHTML += `
-                        <div class="performance-item">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div class="performance-rank ${rankClass}">${performer.rank}</div>
-                                <div class="performance-name">${performer.person}</div>
-                            </div>
-                            <div style="text-align: right;">
-                                <div class="performance-seeds">${performer.totalSeeds.toLocaleString()}</div>
-                                <div class="performance-avg">avg: ${performer.avgSeeds.toLocaleString()}</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                performersEl.innerHTML = performersHTML;
-            }
-
-            // Update performance summary (highest and lowest)
-            let summaryHTML = '';
-            if (analytics.highestPerformer) {
-                summaryHTML += `
-                    <div class="performance-item" style="background: #e8f5e8;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-crown" style="color: #ffd700;"></i>
-                            <div>
-                                <div class="performance-name">Highest: ${analytics.highestPerformer.person}</div>
-                                <div style="font-size: 12px; color: #666;">${analytics.highestPerformer.totalSeeds.toLocaleString()} seeds</div>
-                            </div>
-                        </div>
-                        <div class="performance-seeds">${analytics.highestPerformer.totalSeeds.toLocaleString()}</div>
-                    </div>
-                `;
-            }
-            
-            if (analytics.lowestPerformer && analytics.lowestPerformer.person !== analytics.highestPerformer?.person) {
-                summaryHTML += `
-                    <div class="performance-item" style="background: #fff5f5;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-arrow-down" style="color: #dc3545;"></i>
-                            <div>
-                                <div class="performance-name">Lowest: ${analytics.lowestPerformer.person}</div>
-                                <div style="font-size: 12px; color: #666;">${analytics.lowestPerformer.totalSeeds.toLocaleString()} seeds</div>
-                            </div>
-                        </div>
-                        <div class="performance-seeds" style="color: #dc3545;">${analytics.lowestPerformer.totalSeeds.toLocaleString()}</div>
-                    </div>
-                `;
-            }
-            
-            summaryEl.innerHTML = summaryHTML || `
-                <div style="text-align: center; color: #666; padding: 20px;">
-                    <i class="fas fa-info-circle"></i><br>
-                    No performance data available
-                </div>
-            `;
-        }
-
-        function updateLifetimeStats() {
-            const lifetimeStats = historyManager.getLifetimeStats();
-            const statsEl = document.getElementById('lifetimeStats');
-            const averagesEl = document.getElementById('lifetimeAverages');
-
-            if (!lifetimeStats) {
-                statsEl.innerHTML = `
-                    <div class="stat-box">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Total Searches</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Total Records</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Total Seeds</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Avg/Record</div>
-                    </div>
-                `;
-                
-                averagesEl.innerHTML = `
-                    <div style="text-align: center; color: #666; padding: 20px;">
-                        <i class="fas fa-history"></i><br>
-                        No lifetime data available
-                    </div>
-                `;
-                return;
-            }
-
-            // Update lifetime stats
-            statsEl.innerHTML = `
-                <div class="stat-box">
-                    <div class="stat-value">${lifetimeStats.totalSearches}</div>
-                    <div class="stat-label">Total Searches</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">${lifetimeStats.totalRecords}</div>
-                    <div class="stat-label">Total Records</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">${lifetimeStats.totalSeeds.toLocaleString()}</div>
-                    <div class="stat-label">Total Seeds</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">${lifetimeStats.avgSeedsPerSearch.toLocaleString()}</div>
-                    <div class="stat-label">Avg/Search</div>
-                </div>
-            `;
-
-            // Update lifetime averages
-            if (lifetimeStats.personAverages.length === 0) {
-                averagesEl.innerHTML = `
-                    <div style="text-align: center; color: #666; padding: 20px;">
-                        <i class="fas fa-user-friends"></i><br>
-                        No person data available
-                    </div>
-                `;
-                return;
-            }
-
-            let averagesHTML = '';
-            lifetimeStats.personAverages.forEach(person => {
-                averagesHTML += `
-                    <div class="lifetime-item">
-                        <div>
-                            <div class="lifetime-name">${person.person}</div>
-                            <div style="font-size: 11px; color: #666;">
-                                ${person.searchCount} search${person.searchCount !== 1 ? 'es' : ''}
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div class="lifetime-avg">${person.avgSeeds.toLocaleString()}</div>
-                            <div style="font-size: 11px; color: #666;">
-                                total: ${person.totalSeeds.toLocaleString()}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            averagesEl.innerHTML = averagesHTML;
-        }
-
-        function updateHistoryList() {
-            const history = historyManager.getHistory();
-            const historyList = document.getElementById('historyList');
-            const emptyHistory = document.getElementById('emptyHistory');
-
-            if (history.length === 0) {
-                historyList.style.display = 'none';
-                emptyHistory.style.display = 'block';
-                return;
-            }
-
-            historyList.style.display = 'block';
-            emptyHistory.style.display = 'none';
-            
-            let historyHTML = '';
-            history.forEach(entry => {
-                const isActive = entry.id === historyManager.currentHistoryId ? 'active' : '';
-                historyHTML += `
-                    <div class="history-item ${isActive}" onclick="loadHistoryEntry(${entry.id})">
-                        <div class="history-date">
-                            <i class="far fa-clock"></i> ${entry.timestamp}
-                        </div>
-                        <div class="history-stats">
-                            <span><i class="fas fa-list"></i> ${entry.resultsCount} records</span>
-                            <span><i class="fas fa-seedling"></i> ${entry.totalSeeds.toLocaleString()} seeds</span>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            historyList.innerHTML = historyHTML;
-        }
-
-        function clearHistory() {
-            if (historyManager.getHistory().length === 0) {
-                showStatus('History is already empty', 'info');
-                return;
-            }
-
-            if (confirm('Are you sure you want to clear all search history? This action cannot be undone.')) {
-                historyManager.clearHistory();
-                updateHistoryList();
-                updateQuickStats();
-                
-                // Clear lifetime stats if on that tab
-                if (document.getElementById('lifetimeTab').classList.contains('active')) {
-                    updateLifetimeStats();
-                }
-                
-                showStatus('All search history has been cleared', 'success');
-            }
-        }
-
-        function updateQuickStats(result) {
-            const quickStats = document.getElementById('quickStats');
-            
-            if (!result) {
-                const history = historyManager.getHistory();
-                if (history.length === 0) {
-                    quickStats.innerHTML = `
-                        <div class="history-empty">
-                            <i class="fas fa-chart-bar fa-2x"></i><br>
-                            Process data to see stats
-                        </div>
-                    `;
-                    return;
-                }
-                
-                // Calculate from history
-                const totalProcessed = history.length;
-                const totalSeeds = history.reduce((sum, h) => sum + h.totalSeeds, 0);
-                const avgSeeds = Math.round(totalSeeds / totalProcessed);
-                
-                quickStats.innerHTML = `
-                    <div class="analytics-stats">
-                        <div class="stat-box">
-                            <div class="stat-value">${totalProcessed}</div>
-                            <div class="stat-label">Total Searches</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">${avgSeeds.toLocaleString()}</div>
-                            <div class="stat-label">Avg Seeds/Search</div>
-                        </div>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Calculate from current result
-            const nonZero = result.results.filter(r => r.rawSeeds > 0).length;
-            const successRate = Math.round((nonZero / result.results.length) * 100);
-            
-            quickStats.innerHTML = `
-                <div class="analytics-stats">
-                    <div class="stat-box">
-                        <div class="stat-value">${result.results.length}</div>
-                        <div class="stat-label">Records Found</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">${result.stats.input2.totalSeeds.toLocaleString()}</div>
-                        <div class="stat-label">Total Seeds</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">${successRate}%</div>
-                        <div class="stat-label">Match Rate</div>
-                    </div>
-                </div>
-            `;
         }
 
         function showStatus(message, type = 'info') {
@@ -1584,45 +743,147 @@ CMH    CMH6    s_cmh6_5820  51.91.176.204  Team  2681342"></textarea>
             document.getElementById('resultsSection').style.display = show ? 'block' : 'none';
         }
 
-        function loadExample() {
-            document.getElementById('input1').value = `s_cmh6_5820  51.91.176.204  Imnae
-s_cmh6_5820  51.91.176.203  Amine
-s_cmh6_5820  51.91.176.65  Nabila
-s_cmh6_5821  51.91.176.70  Sarah
-s_cmh6_5821  51.91.176.71  John`;
+        function displayResults(results) {
+            const tbody = document.getElementById('resultsBody');
+            tbody.innerHTML = '';
 
-            document.getElementById('input2').value = `Group\tEntity\tServer\tIp\tTeam\tData Sent\tUnique Data Sent\tSeeds Sent\tData Clicks\tData Clicks Bots\tData Unsubscribes\tRevenue
-CMH\tCMH6\ts_cmh6_5899\t51.254.84.4\tProd Delivery L Gmail\t0\t0\t9555\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5899\t51.254.84.3\tProd Delivery L Gmail\t0\t0\t9079\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5820\t51.91.176.204\tProd Delivery L Gmail\t0\t0\t2681342\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5820\t51.91.176.203\tProd Delivery L Gmail\t0\t0\t2373386\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5820\t51.91.176.65\tProd Delivery L Gmail\t0\t0\t2233769\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5820\t51.91.176.66\tProd Delivery L Gmail\t0\t0\t1987654\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5821\t51.91.176.70\tProd Delivery L Gmail\t0\t0\t1876543\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5821\t51.91.176.71\tProd Delivery L Gmail\t0\t0\t1765432\t0\t0\t0\t0`;
+            if (results.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="4" style="text-align: center; color: #666; padding: 40px;">
+                            <i class="fas fa-exclamation-triangle"></i> No data found
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
 
-            showStatus('Example data loaded. Click "Process Data" to see it in action!', 'info');
+            results.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="ip-cell">${item.ip}</td>
+                    <td class="server-cell">${item.server}</td>
+                    <td class="value-cell">${item.value.toLocaleString()}</td>
+                    <td class="person-cell">${item.person}</td>
+                `;
+                tbody.appendChild(row);
+            });
         }
 
-        function loadDuplicateExample() {
-            document.getElementById('input1').value = `s_cmh6_5823  51.195.206.152  Chaymae
-s_cmh6_5820  51.91.176.204  Imnae
-s_cmh6_5820  51.91.176.203  Amine`;
+        function processCustomData() {
+            const serverPersonText = document.getElementById('input1').value.trim();
+            const customDataText = document.getElementById('input2').value.trim();
 
-            document.getElementById('input2').value = `Group\tEntity\tServer\tIp\tTeam\tData Sent\tUnique Data Sent\tSeeds Sent\tData Clicks\tData Clicks Bots\tData Unsubscribes\tRevenue
-CMH\tCMH6\ts_cmh6_5823\t51.195.206.152\tProd Delivery C Gmail\t0\t0\t692564\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5823\t51.195.206.152\tProd Delivery D Gmail\t0\t0\t0\t1\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5820\t51.91.176.204\tProd Delivery L Gmail\t0\t0\t2681342\t0\t0\t0\t0
-CMH\tCMH6\ts_cmh6_5820\t51.91.176.203\tProd Delivery L Gmail\t0\t0\t2373386\t0\t0\t0\t0`;
+            if (!serverPersonText || !customDataText) {
+                showStatus('Please provide data in Input 1 and Input 2', 'error');
+                return;
+            }
 
-            showStatus('Duplicate IP example loaded. Seeds are automatically summed.', 'info');
+            showLoader(true);
+            showResults(false);
+
+            setTimeout(() => {
+                try {
+                    currentResults = processor.processCustomData(serverPersonText, customDataText);
+                    displayResults(currentResults);
+                    
+                    const matchRate = processor.stats.totalRecords > 0 ? 
+                        Math.round((processor.stats.matched / processor.stats.totalRecords) * 100) : 0;
+                    
+                    showStatus(`Processed ${processor.stats.totalRecords} records. ${matchRate}% matched to person names.`, 'success');
+                    showResults(true);
+                    
+                } catch (error) {
+                    showStatus(`Error: ${error.message}`, 'error');
+                    console.error(error);
+                } finally {
+                    showLoader(false);
+                }
+            }, 300);
+        }
+
+        function processStandardData() {
+            const serverPersonText = document.getElementById('input1').value.trim();
+            const seedsDataText = document.getElementById('input3').value.trim();
+
+            if (!serverPersonText || !seedsDataText) {
+                showStatus('Please provide data in Input 1 and Input 3', 'error');
+                return;
+            }
+
+            showLoader(true);
+            showResults(false);
+
+            setTimeout(() => {
+                try {
+                    currentResults = processor.processStandardData(serverPersonText, seedsDataText);
+                    displayResults(currentResults);
+                    
+                    const matchRate = processor.stats.totalRecords > 0 ? 
+                        Math.round((processor.stats.matched / processor.stats.totalRecords) * 100) : 0;
+                    
+                    showStatus(`Processed ${processor.stats.totalRecords} records. ${matchRate}% matched to person names.`, 'success');
+                    showResults(true);
+                    
+                } catch (error) {
+                    showStatus(`Error: ${error.message}`, 'error');
+                    console.error(error);
+                } finally {
+                    showLoader(false);
+                }
+            }, 300);
+        }
+
+        function loadExample() {
+            // Input 1: Server & Person Data
+            document.getElementById('input1').value = `s_cmh6_5722  209.58.134.24  John
+s_cmh6_5322  69.65.51.180  Sarah
+s_cmh6_5322  69.65.51.183  Mike
+s_cmh6_5322  69.65.51.191  Lisa`;
+
+            // Input 2: Custom Data Format
+            document.getElementById('input2').value = `s_cmh6_5722	209.58.134.24	
+Gmail
+11132
+13503
+12208
+-
+26998
+13501
+19864
+20132
+26998
+705604
+
+s_cmh6_5322	69.65.51.180	
+Gmail
+9310
+17946
+22602
+18368
+18998
+25868
+15939
+18642
+25868
+802600`;
+
+            // Input 3: Standard Seeds Data
+            document.getElementById('input3').value = `Group\tEntity\tServer\tIp\tTeam\tSeeds Sent
+CMH\tCMH6\ts_cmh6_5899\t51.254.84.4\tTeam\t9555
+CMH\tCMH6\ts_cmh6_5820\t51.91.176.204\tTeam\t2681342
+CMH\tCMH6\ts_cmh6_5820\t51.91.176.203\tTeam\t2373386`;
+
+            showStatus('Example data loaded. Use "Process Custom Data" or "Process Standard Data".', 'info');
         }
 
         function clearAll() {
             document.getElementById('input1').value = '';
             document.getElementById('input2').value = '';
+            document.getElementById('input3').value = '';
             document.getElementById('resultsBody').innerHTML = '';
             document.getElementById('resultsSection').style.display = 'none';
+            
             showStatus('All fields cleared. Ready for new data.', 'info');
         }
 
@@ -1632,11 +893,7 @@ CMH\tCMH6\ts_cmh6_5820\t51.91.176.203\tProd Delivery L Gmail\t0\t0\t2373386\t0\t
                 return;
             }
 
-            // Create TSV from current results
-            const headers = ['IP', 'Server', 'Seeds Sent', 'Person'];
-            const rows = currentResults.map(r => [r.ip, r.server, r.seeds, r.person]);
-            const tsv = [headers.join('\t'), ...rows.map(row => row.join('\t'))].join('\n');
-            
+            const tsv = processor.generateTSV();
             const blob = new Blob([tsv], { type: 'text/tab-separated-values' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -1649,9 +906,6 @@ CMH\tCMH6\ts_cmh6_5820\t51.91.176.203\tProd Delivery L Gmail\t0\t0\t2373386\t0\t
             
             showStatus('Results downloaded successfully!', 'success');
         }
-
-        // Initialize quick stats
-        updateQuickStats();
     </script>
 </body>
 </html>
